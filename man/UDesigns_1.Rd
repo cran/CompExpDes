@@ -41,3 +41,8 @@ Fang, K.T. (1980). The uniform design: application of number-theoretic methods i
 \keyword{Discrete Discrepancy}
 \keyword{Orthogonal uniform designs}
 \keyword{Two factor orthogonal uniform designs}
+\keyword{LHD}
+\keyword{CompExpDes}
+\keyword{Latin Hypercube Designs}
+\keyword{Computer Experiments}
+\keyword{Space-Filling Designs}

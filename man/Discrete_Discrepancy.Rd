@@ -45,3 +45,8 @@ Discrete Discrepancy
 \keyword{
 Uniformity measure
 }
+\keyword{LHD}
+\keyword{CompExpDes}
+\keyword{Latin Hypercube Designs}
+\keyword{Computer Experiments}
+\keyword{Space-Filling Designs}

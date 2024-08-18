@@ -31,3 +31,7 @@ Maxpro_Measure(lhd)
 \keyword{Space-filling measure}
 \keyword{maxpro}
 \keyword{Computer experiments}
+\keyword{LHD}
+\keyword{CompExpDes}
+\keyword{Latin Hypercube Designs}
+\keyword{Space-Filling Designs}

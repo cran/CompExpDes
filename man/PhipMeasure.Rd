@@ -40,4 +40,7 @@ PhipMeasure(lhd,p=15,q=2)
 \keyword{Space-filling measure}
 \keyword{phip}
 \keyword{Computer experiments}
-
+\keyword{LHD}
+\keyword{CompExpDes}
+\keyword{Latin Hypercube Designs}
+\keyword{Space-Filling Designs}

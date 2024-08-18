@@ -1,7 +1,7 @@
 Discrete_Discrepancy<-function(Design,a,b){
   matrix<-as.matrix(Design)
   s<-ncol(matrix)
-  q<-max(matrix)
+  q<-length(unique(matrix))
   n<-nrow(matrix)
   collect_for_sum<-c()
   for(i in 1:(nrow(matrix)-1)){

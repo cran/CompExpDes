@@ -33,3 +33,8 @@ Fang, K.T. (1980). The uniform design: application of number-theoretic methods i
 \keyword{UD}
 \keyword{Discrete Discrepancy}
 \keyword{Multi dimensional uniform designs}
+\keyword{LHD}
+\keyword{CompExpDes}
+\keyword{Latin Hypercube Designs}
+\keyword{Computer Experiments}
+\keyword{Space-Filling Designs}
