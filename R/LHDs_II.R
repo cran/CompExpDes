@@ -4,6 +4,11 @@ LHDs_II<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
   iteration=iterations
   n=2*factor+1
   v=choose(n,2)
+  if(levels>v || levels<=factors){
+    return(message("Levels should be in the range from (factos+2) to nC2, where n = 2*factors+1"))
+  }
+  
+  
   seq1=c(1:(n-1))
   seq2=c((n-1):2)
   list<-list()
@@ -84,8 +89,6 @@ LHDs_II<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
       return(lm)
     }
     if(i==iterations){
-      # min_val_pos<-which(store_mac==min(store_mac))[1]
-      # final_des<-store_des[[min_val_pos]]
       measure_mat<-store_mp_phip_mac
       measure_mat[,1]<-store_mp_phip_mac[,1]*weight[1]
       measure_mat[,2]<-store_mp_phip_mac[,2]*weight[2]

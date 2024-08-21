@@ -14,10 +14,10 @@ Discrete_Discrepancy(Design,a,b)
 A matrix
 }
   \item{a}{
-Any value a>b>0
+Any value a>b>0. By default it is set to 1.
 }
   \item{b}{
-Any value a>b>0
+Any value a>b>0. By default it is set to 0.5.
 }
 }
 \value{

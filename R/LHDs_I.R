@@ -1,6 +1,6 @@
 LHDs_I<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
   if(levels>factors^2 || levels<=factors){
-    return(message("Levels should be in the range from (factos+1) to (factors^2)"))
+    return(message("Levels should be in the range from (factos+2) to (factors^2)"))
   }
   t0<-Sys.time()
   ############
