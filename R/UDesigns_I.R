@@ -1,4 +1,4 @@
-UDesigns_1<-function(p,q,type){
+UDesigns_I<-function(p,q,type){
   if(p<=2){
     return(message("Please enter p>2 and q>=2, such that v>=6."))
   }

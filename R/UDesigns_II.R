@@ -1,4 +1,4 @@
-UDesigns_2<-function(n){
+UDesigns_II<-function(n){
   ########################
   if(n%%2==0 || n<5){
     return(message("Please provide an odd value of n (>=5)."))

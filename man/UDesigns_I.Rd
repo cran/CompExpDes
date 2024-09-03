@@ -1,5 +1,5 @@
-\name{UDesigns_1}
-\alias{UDesigns_1}
+\name{UDesigns_I}
+\alias{UDesigns_I}
 \title{
 Orthogonal Uniform Designs with two factors
 }
@@ -7,7 +7,7 @@ Orthogonal Uniform Designs with two factors
 For v = pq (p>2,q>=2 and v>=6) these uniform designs are generated. This function provides designs based on two types. It also provides number of factors, number of levels, number of runs along with maximum absolute correlation value and discrete discrepancy measure with its lower bound value.
 }
 \usage{
-UDesigns_1(p, q, type)
+UDesigns_I(p, q, type)
 }
 \arguments{
   \item{p}{ any integer >2
@@ -31,7 +31,7 @@ Mohd Harun
 }
 \examples{
 library(CompExpDes)
-UDesigns_1(4,3,1)
+UDesigns_I(4,3,1)
 }
 \references{
 Fang, K.T. (1980). The uniform design: application of number-theoretic methods in experimental design. Acta Math Appl Sin, 3, 363-372.
