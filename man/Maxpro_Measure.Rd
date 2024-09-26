@@ -4,7 +4,7 @@
 Measure of Maxpro criterion
 }
 \description{
-Based upon a provided design, this function generates the value of maxpro criterion. Lesser the value of it better the design is (if design is not scaled in [0,1]^d).}
+Based upon a provided design, this function generates the value of maxpro criterion. Lesser the value of it better the design.}
 \usage{Maxpro_Measure(Design)}
 \arguments{
   \item{Design}{

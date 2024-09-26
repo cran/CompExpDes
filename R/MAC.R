@@ -1,7 +1,7 @@
 MAC<-function(matrix){
-  matrix<-as.matrix(matrix)
-  value<-sort(unique(abs(c(cor(matrix)))),decreasing = TRUE)[2]
-  return((value))
+  matrix=as.matrix(matrix)
+  mat<-cor(matrix)
+  upper_tri_values<-abs(mat[upper.tri(mat)])
+  return(max(upper_tri_values))
 }
-
 

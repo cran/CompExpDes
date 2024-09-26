@@ -4,7 +4,7 @@
 Phi_p criterion
 }
 \description{
-For a given design Phi_p criterion is calculated. It is based on Morris and Mitchell (1995). When the designs are not in [0,1]^d form, lesser the value of Phi_p criterion better it is.
+For a given design Phi_p criterion is calculated. It is based on Morris and Mitchell (1995). Lesser the value of Phi_p criterion better the design.
 }
 \usage{
 PhipMeasure(design,p=15,q=2)

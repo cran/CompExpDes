@@ -4,13 +4,13 @@
 Uniform Designs with multiple factors
 }
 \description{
-For v = n(n-1)/2, where n (>=5) is any odd number.  These are uniform designs interms of discrete discrepancy. It also provides number of factors, number of levels and number of runs and discrete discrepancy measure with its lower bound value.
+For v = sC2, where s (>=5) is any odd number.  These are uniform designs interms of discrete discrepancy. It also provides number of factors, number of levels and number of runs and discrete discrepancy measure with its lower bound value.
 }
 \usage{
-UDesigns_II(n)
+UDesigns_II(s)
 }
 \arguments{
-  \item{n}{ any odd integer >=5
+  \item{s}{ any odd integer >=5
 }
 }
 \value{

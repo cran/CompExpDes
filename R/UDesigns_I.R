@@ -65,11 +65,11 @@ UDesigns_I<-function(p,q,type){
     return(result)
   }
   list2<-list_maker(length(now_the_scheme[[1]]),length(now_the_scheme))
-  for(i in 1:100000){
+  repeat{
     design<-cbind(unlist(list2),unlist(now_the_scheme[c(sample(1:v,v,FALSE))]))
     minimum_abs_cor<-(min(cor(design)))
     if(minimum_abs_cor==0){
-      colnames(design)<-c( "Regions","Treatments")
+      colnames(design)<-NULL
       final_list<-list("Uniform_Design"=design,"Number of Factors"=2,"Number of Levels"=v,"Number of Runs"=nrow(design),"Maximum Absolute Correlation"=abs(minimum_abs_cor),"Discrete Discrepancy Measure"=Discrete_Discrepancy(design,1,0.3)[[1]],
                        "Lower Bound of Discrete Discrepancy"=Discrete_Discrepancy(design,1,0.3)[[2]])
       return(final_list)

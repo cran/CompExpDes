@@ -1,7 +1,8 @@
-UDesigns_II<-function(n){
+UDesigns_II<-function(s){
+  n=s
   ########################
   if(n%%2==0 || n<5){
-    return(message("Please provide an odd value of n (>=5)."))
+    return(message("Please provide an odd value of s (>=5)."))
   }
   Discrete_Discrepancy<-function(Design,a,b){
     matrix<-as.matrix(Design)

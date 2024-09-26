@@ -4,13 +4,13 @@
 Latin Hypercube Designs (LHDs) for Any Numbers of Factors
 }
 \description{
-For any number of factors, F (>2), this method will generate LHDs with runs ranges from F+2 to nC2, where n=2*F+1. Maxpro criterion measure, Phi_p measure also provided as a measure of space-filling and orthogonality measure maximum absolute correlation (MAC) value also provided.
+For any number of factors, F (>2), this method will generate LHDs with runs ranges from F+2 to sC2, where s=2*F+1. Maxpro criterion measure, Phi_p measure also provided as a measure of space-filling and orthogonality measure maximum absolute correlation (MAC) value also provided.
 }
 \usage{
 LHDs_II(levels,factors,weight,iterations)
 }
 \arguments{
-  \item{levels}{ Ranges from (factors+2) to nC2, where n=2*factors+1}
+  \item{levels}{ Ranges from (factors+2) to sC2, where s=2*factors+1}
   \item{factors}{ Any integer (>2)}
   \item{weight}{ Weight should be given to Maxpro, Phi_p and MAC such that sum is 1. Default it is 0.3, 0.3 and 0.4}
   \item{iterations}{ Number of iterations. By default it is 400.}
