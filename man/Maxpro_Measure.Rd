@@ -4,15 +4,15 @@
 Measure of Maxpro criterion
 }
 \description{
-Based upon a provided design, this function generates the value of maxpro criterion. Lesser the value of it better the design.}
+This function calculates Maxpro criterion for a given space-filling design. Lesser the value of it better the design, in the sense that the design has maximum spread in higher dimensional spaces.}
 \usage{Maxpro_Measure(Design)}
 \arguments{
   \item{Design}{
-Provide a design in matrix format
+Provide a design in a matrix format
 }
 }
 \value{
-Provides Maxpro criterion value
+Provides Maxpro criterion value given by Joseph et al. (2015).
 }
 \references{
 Joseph, V.R., Gul, E. and Ba, S. (2015). Maximum projection designs for computer experiments. Biometrika, 102 (2), 371-380.

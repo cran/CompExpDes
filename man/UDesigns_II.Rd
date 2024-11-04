@@ -1,20 +1,20 @@
 \name{UDesigns_II}
 \alias{UDesigns_II}
 \title{
-Uniform Designs with multiple factors
+Uniform Designs with Multiple Factors with Minimal Runs
 }
 \description{
-For v = sC2, where s (>=5) is any odd number.  These are uniform designs interms of discrete discrepancy. It also provides number of factors, number of levels and number of runs and discrete discrepancy measure with its lower bound value.
+ In this series, the Uniform Designs (UDs) are high dimensional with lesser number of runs will always attain lower bound of discrete discrepancy. They are available for any even number of factors, F (>= 4) with F(F+1) levels each.
 }
 \usage{
-UDesigns_II(s)
+UDesigns_II(factors)
 }
 \arguments{
-  \item{s}{ any odd integer >=5
+  \item{factors}{ any even number >=4
 }
 }
 \value{
-Returns a series of high dimensional uniform designs along with number of factors, levels, runs and discrete discrepancy measure with its lower bound value.
+Returns a series of high dimensional UDs along with number of factors, levels, runs, MAC value and discrete discrepancy measure along with its lower bound value.
 }
 \author{
 Ashutosh Dalal,
@@ -24,7 +24,7 @@ Mohd Harun
 }
 \examples{
 library(CompExpDes)
-UDesigns_II(5)
+UDesigns_II(4)
 }
 \references{
 Fang, K.T. (1980). The uniform design: application of number-theoretic methods in experimental design. Acta Math Appl Sin, 3, 363-372.

@@ -1,32 +1,11 @@
-UDesigns_II<-function(s){
-  n=s
+###UDesigns_2 start
+UDesigns_II<-function(factors){
+  t0=Sys.time()
+  n=factors+1
   ########################
-  if(n%%2==0 || n<5){
-    return(message("Please provide an odd value of s (>=5)."))
-  }
-  Discrete_Discrepancy<-function(Design,a,b){
-    matrix<-as.matrix(Design)
-    s<-ncol(matrix)
-    q<-max(matrix)
-    n<-nrow(matrix)
-    collect_for_sum<-c()
-    for(i in 1:(nrow(matrix)-1)){
-      for(j in (i+1):nrow(matrix)){
-        substract_row<-matrix[i,]-matrix[j,]
-        now<-length(substract_row[substract_row!=0])
-        hamming<-length(matrix[i,])-now
-        collect_for_sum<-c(collect_for_sum,(a/b)^hamming)
-      }
-    }
-    DD<--((a+((q-1)*b))/q)^s+((a^s)/n)+((2*(b^s))/(n^2))*sum(collect_for_sum)
-    ############LDD
-    psy<-(s*(n-q)/(q*(n-1)))
-    gamma<-as.integer(psy)
-    LDD<--((a+((q-1)*b))/q)^s+((a^s)/n)+(((n-1)*(b*(1-psy)+a*psy)*b^s)/(n*b))*(a/b)^gamma
-    list1=list(DD,LDD)
-    return(list1)
-  }
-  
+  # if(n%%2==0 || n<5){
+  #   return(message("Please provide an odd value of factors (>=5)."))
+  # }
   ###################################3
   v=choose(n,2)
   tri<-matrix(NA,n,n)
@@ -101,8 +80,12 @@ UDesigns_II<-function(s){
   ration_seq1=c(ncol(final1):1)
   ######################final task
   final1<-rbind(final1,final1[,ration_seq1])
-  final_list<-list("Uniform_Design"=final1,"Number of Factors"=n-1,"Number of Levels"=n*(n-1)/2,"Number of Runs"=nrow(final1),"Discrete Discrepancy Measure"=Discrete_Discrepancy(final1,1,0.3)[[1]],
-                   "Lower Bound of Discrete Discrepancy"=Discrete_Discrepancy(final1,1,0.3)[[2]])
+  DD<-Discrete_Discrepancy(final1)
+  t1=Sys.time()
+  total_time<-t1-t0
+  final_list<-list("Uniform design"=final1,"Number of factors"=n-1,"Number of levels"=n*(n-1)/2,"Number of runs"=nrow(final1),"Maximum absolute correlation"=MAC(final1),"Discrete discrepancy measure"=DD[[1]],
+                   "Lower bound of discrete discrepancy deasure"=DD[[2]],"Total system time"=total_time)
   return(final_list)
 }
 
+###Udesigns_II End

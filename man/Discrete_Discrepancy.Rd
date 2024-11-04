@@ -36,8 +36,8 @@ Mohd Harun
 library(CompExpDes)
 lhd1<-matrix(c(1,5,7,3,4,2,6,2,1,4,5,3,7,6,4,5,6,1,2,3,7),nrow=7,ncol=3,byrow=FALSE)
 lhd2<-cbind(lhd1[,3],lhd1[,2],lhd1[,1])
-lhd<-rbind(lhd1,lhd2)
-Discrete_Discrepancy(lhd, 1, 0.5)
+ud<-rbind(lhd1,lhd2)
+Discrete_Discrepancy(ud, 1, 0.5)
 }
 \keyword{
 Discrete Discrepancy

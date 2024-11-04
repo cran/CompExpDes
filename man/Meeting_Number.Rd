@@ -13,11 +13,11 @@ Meeting_Number(matrix)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{matrix}{
-Any matrix
+Provide any matrix
 }
 }
 \value{
-This function provides the maximum coincidence number between any pair of rows of for given matrix.
+This function provides the maximum coincidence number between any pair of rows of for a given matrix.
 }
 \author{
   Ashutosh Dalal,

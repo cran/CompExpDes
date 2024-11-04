@@ -1,37 +1,19 @@
-UDesigns_I<-function(p,q,type){
-  if(p<=2){
-    return(message("Please enter p>2 and q>=2, such that v>=6."))
-  }
-  if(q<2){
-    return(message("Please enter p>2 and q>=2, such that v>=6."))
+UDesigns_I<-function(levels,type){
+  t0=Sys.time()
+  factors<-NULL
+  for(i in 3:as.integer(levels/2)){
+    if(levels%%i==0){
+      factors<-c(i,levels/i)
+      p<-factors[1]
+      q<-factors[2]
+      break
+    }
   }
   #########
-  Discrete_Discrepancy<-function(Design,a,b){
-    matrix<-as.matrix(Design)
-    s<-ncol(matrix)
-    q<-max(matrix)
-    n<-nrow(matrix)
-    collect_for_sum<-c()
-    for(i in 1:(nrow(matrix)-1)){
-      for(j in (i+1):nrow(matrix)){
-        substract_row<-matrix[i,]-matrix[j,]
-        now<-length(substract_row[substract_row!=0])
-        hamming<-length(matrix[i,])-now
-        collect_for_sum<-c(collect_for_sum,(a/b)^hamming)
-      }
-    }
-    DD<--((a+((q-1)*b))/q)^s+((a^s)/n)+((2*(b^s))/(n^2))*sum(collect_for_sum)
-    ############LDD
-    psy<-(s*(n-q)/(q*(n-1)))
-    gamma<-as.integer(psy)
-    LDD<--((a+((q-1)*b))/q)^s+((a^s)/n)+(((n-1)*(b*(1-psy)+a*psy)*b^s)/(n*b))*(a/b)^gamma
-    list1=list(DD,LDD)
-    return(list1)
-  }
   ################################
   v=p*q
   scheme<-matrix(1:v,p,q,byrow=TRUE)
-  if(type==2){
+  if(type=="Good"){
     rectangular_scheme<-list()
     for(i in 1:v){
       row_pos<-which(scheme==i,arr.ind = TRUE)[1,1]
@@ -43,7 +25,7 @@ UDesigns_I<-function(p,q,type){
   }
   ###################
   #Scheme="GD"
-  if(type==1){
+  if(type=="Excellent"){
     GD_scheme<-list()
     for(i in 1:v){
       row_pos<-which(scheme==i,arr.ind = TRUE)[1,1]
@@ -70,10 +52,14 @@ UDesigns_I<-function(p,q,type){
     minimum_abs_cor<-(min(cor(design)))
     if(minimum_abs_cor==0){
       colnames(design)<-NULL
-      final_list<-list("Uniform_Design"=design,"Number of Factors"=2,"Number of Levels"=v,"Number of Runs"=nrow(design),"Maximum Absolute Correlation"=abs(minimum_abs_cor),"Discrete Discrepancy Measure"=Discrete_Discrepancy(design,1,0.3)[[1]],
-                       "Lower Bound of Discrete Discrepancy"=Discrete_Discrepancy(design,1,0.3)[[2]])
+      t1=Sys.time()
+      total_time=t1-t0
+      final_list<-list("Uniform design"=design,"Number of factors"=2,"Number of levels"=v,"Number of runs"=nrow(design),"Maximum absolute correlation"=abs(minimum_abs_cor),"Discrete discrepancy measure"=Discrete_Discrepancy(design)$`Discrete Discrepancy Measure`,
+                       "Lower bound of discrete discrepancy Measure"=Discrete_Discrepancy(design)$`Lower Bound of Discrete Discrepancy Measure`,"Total system time"=total_time)
       return(final_list)
     }
   }
 }
+
+##########end UDesigns_I
 

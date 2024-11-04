@@ -2,25 +2,25 @@
 \alias{UDesigns_III}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Orthogonal Uniform Designs for Two and Four Factors (Even number v)
+Nearly Orthogonal Uniform Designs for Two and Four Factors 
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
-For even number v (>=6) this function will provide total three uniform designs of two factors (2) and four factors (1).
+This function will provide nearly orthogonal uniform designs (UDs) for number of factors, F = 2 and 4 but a flexible number of levels, L >=3.
 }
 \usage{
-UDesigns_III(v)
+UDesigns_III(levels,factors)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{v}{
+  \item{levels}{
 %%     ~~Describe \code{x} here~~
-An even number of factors,v >=6
+Number of levels, L >=3
 }
+  \item{factors}{
+%%     ~~Describe \code{x} here~~
+Number of factors 2 or 4
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-Uniform Design 1 and Uniform Design 3 are orthogonal/ nearly orthogonal but Uniform Design 2 is always orthogonal design.
 }
 \value{
 %%  ~Describe the value returned
@@ -28,7 +28,7 @@ Uniform Design 1 and Uniform Design 3 are orthogonal/ nearly orthogonal but Unif
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-This function will generate 3 Uniform Designs along with the number of levels,factors, runs and MAC value.
+This function will generate 3 Uniform Designs along with the number of levels,factors, runs, MAC value and discrete discrepancy value along with its lower bound value.
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -43,7 +43,7 @@ Mohd Harun
 \examples{
 \dontrun{
 library(CompExpDes)
-UDesigns_III(10)
+UDesigns_III(3)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

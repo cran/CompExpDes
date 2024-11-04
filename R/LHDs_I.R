@@ -1,6 +1,6 @@
 LHDs_I<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
   if(levels>factors^2 || levels<=factors){
-    return(message("Levels should be in the range from (factos+2) to (factors^2)"))
+    return(message("Levels, L should be in the range from (F+2) to (F^2)"))
   }
   t0<-Sys.time()
   ############
@@ -16,12 +16,12 @@ LHDs_I<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
     return(TRUE)
   }
   if(is.prime(factors)==FALSE){
-    return(message("Please enter number of factors interms of prime numbers"))
+    return(message("Please enter number of factors, F interms of prime numbers"))
   }
   #is.prime(factors)
   ###############
   if(is.prime(factors)==FALSE || factors<3){
-    return(message("Please enter a prime number (>2)"))
+    return(message("Please enter a prime number of factors, F (>2)"))
   }else{
     s=factors
     row_wise_add=c()
@@ -111,7 +111,7 @@ LHDs_I<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
       final_des<-des
       t1=Sys.time()
       time_req<-t1-t0
-      lm=list("LHD"=final_des,"Maxpro_Measure"=store_mp_phip_mac[i,1],"Phi_p_measure"=store_mp_phip_mac[i,2],"MAC"=store_mp_phip_mac[i,3],"Total System Time Requires"=time_req)
+      lm=list("Latin hypercube design"=final_des,"Maxpro_Measure"=store_mp_phip_mac[i,1],"Phi_p_measure"=store_mp_phip_mac[i,2],"MAC"=store_mp_phip_mac[i,3],"Total System Time Requires"=time_req)
       return(lm)
     }
     if(i==iterations){
@@ -120,11 +120,11 @@ LHDs_I<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
       measure_mat[,2]<-store_mp_phip_mac[,2]*weight[2]
       measure_mat[,3]<-store_mp_phip_mac[,3]*weight[3]
       wtsum<-apply(measure_mat,1,sum)
-      min_value<-which(wtsum==min(wtsum))
+      min_value<-which(wtsum==min(wtsum))[1]
       final_des<-store_des[[min_value]]
       t1=Sys.time()
       time_req<-t1-t0
-      lm=list("LHD"=final_des,"Maxpro_Measure"=store_mp_phip_mac[min_value,1],"Phi_p_measure"=store_mp_phip_mac[min_value,2],"MAC"=store_mp_phip_mac[min_value,3],"Total System Time Requires"=time_req)
+      lm=list("Latin hypercube design"=final_des,"Number of factors"=ncol(final_des),"Number of levels"=nrow(final_des),"Maxpro measure"=store_mp_phip_mac[min_value,1],"Phi_p measure"=store_mp_phip_mac[min_value,2],"Maximum absolute correlation"=store_mp_phip_mac[min_value,3],"Total system time"=time_req)
       return(lm)
     }
   }

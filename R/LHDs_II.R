@@ -1,3 +1,4 @@
+
 LHDs_II<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
   Levels=levels
   factor=factors
@@ -5,7 +6,7 @@ LHDs_II<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
   n=2*factor+1
   v=choose(n,2)
   if(levels>v || levels<=factors){
-    return(message("Levels should be in the range from (factos+2) to nC2, where n = 2*factors+1"))
+    return(message("Levels, L should be in the range from (F+2) to sC2, where s = 2F+1"))
   }
   
   
@@ -85,7 +86,7 @@ LHDs_II<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
       t1=Sys.time()
       time_req=t1-t0
       colnames(final_des)<-NULL
-      lm=list("LHD"=final_des,"Maxpro_Measure"=store_mp_phip_mac[i,1],"Phi_p_measure"=store_mp_phip_mac[i,2],"MAC"=store_mp_phip_mac[i,3],"Total System Time Requires"=time_req)
+      lm=list("Latin hypercube design"=final_des,"Number of factors"=ncol(final_des),"Number of levels"=nrow(final_des),"Maxpro measure"=store_mp_phip_mac[i,1],"Phi_p measure"=store_mp_phip_mac[i,2],"Maximum absolute correlation"=store_mp_phip_mac[i,3],"Total system time"=time_req)
       return(lm)
     }
     if(i==iterations){
@@ -94,12 +95,12 @@ LHDs_II<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
       measure_mat[,2]<-store_mp_phip_mac[,2]*weight[2]
       measure_mat[,3]<-store_mp_phip_mac[,3]*weight[3]
       wtsum<-apply(measure_mat,1,sum)
-      min_value<-which(wtsum==min(wtsum))
+      min_value<-which(wtsum==min(wtsum))[1]
       final_des<-store_des[[min_value]]
       t1<-Sys.time()
       time_req<-t1-t0
       colnames(final_des)<-NULL
-      lm=list("LHD"=final_des,"Maxpro_Measure"=store_mp_phip_mac[min_value,1],"Phi_p_measure"=store_mp_phip_mac[min_value,2],"MAC"=store_mp_phip_mac[min_value,3],"Total System Time Requires"=time_req)
+      lm=list("Latin hypercube design"=final_des,"Number of factors"=ncol(final_des),"Number of levels"=nrow(final_des),"Maxpro measure"=store_mp_phip_mac[min_value,1],"Phi_p measure"=store_mp_phip_mac[min_value,2],"Maximum absolute correlation"=store_mp_phip_mac[min_value,3],"Total system time"=time_req)
       return(lm)
     }
   }
