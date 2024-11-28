@@ -1,7 +1,4 @@
 LHDs_I<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
-  if(levels>factors^2 || levels<=factors){
-    return(message("Levels, L should be in the range from (F+2) to (F^2)"))
-  }
   t0<-Sys.time()
   ############
   is.prime <- function(value) {
@@ -15,14 +12,18 @@ LHDs_I<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
     }
     return(TRUE)
   }
-  if(is.prime(factors)==FALSE){
-    return(message("Please enter number of factors, F interms of prime numbers"))
+  #####error messsage
+  if(levels>factors^2 || levels<=factors ||is.prime(factors)==FALSE ||factors<3){
+    return(message("Factors, F (>3) is a prime number and Levels, L should be in the range from (F+2) to (F^2)"))
   }
+  # if(is.prime(factors)==FALSE){
+  #   return(message("Please enter number of factors, F interms of prime numbers"))
+  # }
   #is.prime(factors)
   ###############
-  if(is.prime(factors)==FALSE || factors<3){
-    return(message("Please enter a prime number of factors, F (>2)"))
-  }else{
+  # if(is.prime(factors)==FALSE || factors<3){
+  #   return(message("Please enter a prime number of factors, F (>2)"))
+  # }else{
     s=factors
     row_wise_add=c()
     for(i in 1:(s-1)){
@@ -80,7 +81,7 @@ LHDs_I<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
     for(i in 1:length(Final_list)){
       LHD=rbind(LHD,Final_list[[i]])
     }
-  }
+  #}
   ####################################Design Generation above
   design<-LHD
   ######

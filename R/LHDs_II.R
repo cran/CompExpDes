@@ -5,11 +5,9 @@ LHDs_II<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
   iteration=iterations
   n=2*factor+1
   v=choose(n,2)
-  if(levels>v || levels<=factors){
-    return(message("Levels, L should be in the range from (F+2) to sC2, where s = 2F+1"))
+  if(levels>v || levels<=factors ||factors%%2!=0){
+    return(message("Factors, F is an even number and Levels, L should be in the range from (F+2) to sC2, where s = 2F+1"))
   }
-  
-  
   seq1=c(1:(n-1))
   seq2=c((n-1):2)
   list<-list()
@@ -105,3 +103,4 @@ LHDs_II<-function(levels,factors,weight=c(0.3,0.3,0.4),iterations=400){
     }
   }
 }
+

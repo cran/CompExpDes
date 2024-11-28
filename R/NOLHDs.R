@@ -1,0 +1,32 @@
+NOLHDs<-function(factors,levels){
+  l=levels
+  f=factors
+  t0<-Sys.time()
+  ###MAC function
+  MAC<-function(matrix){
+    matrix=as.matrix(matrix)
+    mat<-cor(matrix)
+    upper_tri_values<-abs(mat[upper.tri(mat)])
+    return(max(upper_tri_values))
+  }
+  #######
+  lhd<-generate_col<-sample(1:l)
+  k=1
+  repeat{
+    generate_col<-sample(1:l)
+    check<-cbind(lhd,generate_col)
+    #if(Meeting_Number(t(check))==0){
+    mac<-MAC(check)
+    if(mac<0.1){
+      lhd<-cbind(lhd,generate_col)
+      k=k+1
+    }
+    if(k==f){
+      colnames(lhd)<-NULL
+      t1<-Sys.time()
+      list<-list("NOLHD"=lhd,"Factors"=f,"Levels"=l,"MAC"=mac,"Time"=t1-t0)
+      return(list)
+    }
+    
+  }
+}
