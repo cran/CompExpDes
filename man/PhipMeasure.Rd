@@ -7,7 +7,7 @@ Phi_p criterion
 For a given design Phi_p criterion (Morris and Mitchell, 1995) is calculated using this function. Lesser the value of Phi_p criterion better the design in terms of space-filling.
 }
 \usage{
-PhipMeasure(design,p=15,q=2)
+PhipMeasure(design,p=15,q=1)
 }
 \arguments{
   \item{design}{
@@ -17,7 +17,7 @@ A design matrix is needed
 Any positive integer. Default value of p = 15.
 }
   \item{q}{
-Any positive integer. Default value of q = 2. This implies that we are considering here Euclidean distance.
+Any positive integer. Default value of q = 1. This implies that we are considering here Euclidean distance.
 }
 }
 \value{
