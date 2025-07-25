@@ -1,4 +1,4 @@
-Meeting_Number<-function(matrix){
+max_coincidence_number<-function(matrix){
   matrix=as.matrix(matrix)
   max_coincidence<-NULL
   for(i in 1:((nrow(matrix)-1))){

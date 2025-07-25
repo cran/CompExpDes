@@ -1,5 +1,5 @@
-\name{Meeting_Number}
-\alias{Meeting_Number}
+\name{max_coincidence_number}
+\alias{max_coincidence_number}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Maximum Coincidence (or Meeting) numbers between rows 
@@ -8,7 +8,7 @@ Maximum Coincidence (or Meeting) numbers between rows
 Finding out Maximum coincidence (or Meeting) number between unique pair of rows. 
 }
 \usage{
-Meeting_Number(matrix)
+max_coincidence_number(matrix)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -28,7 +28,7 @@ This function provides the maximum coincidence number between any pair of rows o
 \examples{
 library(CompExpDes)
   mat<-matrix(c(1,2,3,3,2,1,4,2,1),nrow=3,byrow=TRUE)
-  Meeting_Number(mat)
+  max_coincidence_number(mat)
 }
 \keyword{Meeting number}
 \keyword{Coincidence number}
