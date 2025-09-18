@@ -1,5 +1,5 @@
-fe693e6f7e50bbec95f9de1cc0089087 *DESCRIPTION
-61ed99384082aa658eeaa69b91f7aeb7 *NAMESPACE
+f530b966650540db809a7fc2a99a74fe *DESCRIPTION
+307bac33ee4e30290e36478cb8b252e9 *NAMESPACE
 e1c7dd2ed90ec562b0a19df795f5914e *R/Best_Model.R
 f42847c05a43591edf41978c5a06c23d *R/Discrete_Discrepancy.R
 c6fb9240cf772d02198d5fa7dac6713a *R/MAC.R
@@ -12,8 +12,8 @@ d0820260aa168b7fd0c1881ab61deffe *R/NOLHDs.R
 2f0b01d4e1fa91107601f08707f92707 *R/UDesigns_II.R
 f44f977602a2a7217102a1615f9f7f27 *R/UDesigns_III.R
 34efe3af282721895b43e11c7994cb4a *R/max_coincidence_number.R
-57c561e59e729129c772394ef38f292c *R/wtLHDs.R
-462bcc2d1a68c4a8ea1b1ae7bbaec1f8 *R/wtLHDs_prime.R
+4983aeb6a9ff82a2e4a72b6552b9cb11 *R/wtLHDs.R
+f5b2e5fefd0c561af1bfa48e3939c010 *R/wtLHDs_prime.R
 e33d075545c888afda7c897b919419db *man/Best_Model.Rd
 3507db9397cc3f245926ecdc8c388377 *man/Discrete_Discrepancy.Rd
 949dc85a795ff5fdbf3a2ce7b24968d5 *man/MAC.Rd
@@ -26,5 +26,5 @@ c3c9bcf00d70bef915c7695a76eae8e8 *man/SLHDs.Rd
 07b588ffed2738175b8e742192646371 *man/UDesigns_I.Rd
 513a996e4d256525fd86c45ea308fe9e *man/UDesigns_II.Rd
 f402ac3197f19593bfb5b4f8abec7579 *man/UDesigns_III.Rd
-e75c0c465d2aad6df384f767cbcb23fc *man/wtLHDs.Rd
-ed68e85de459d9a53e2c51f05e2be6d7 *man/wtLHDs_prime.Rd
+89ec8f5b114939f7b7fc7d28f238761f *man/wtLHDs.Rd
+16eed4caf6fb0ddda5695b76d3b6f251 *man/wtLHDs_prime.Rd

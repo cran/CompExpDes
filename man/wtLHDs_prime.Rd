@@ -12,7 +12,7 @@ wtLHDs_prime(
   w3,
   pop_size = 30,
   generations = 100,
-  mut_prob = 0.05
+  mut_prob = 1/(factors - 1)
 )
 }
 \arguments{
@@ -30,7 +30,7 @@ wtLHDs_prime(
 
 \item{generations}{Default number of generations is 100.}
 
-\item{mut_prob}{Mutation probability, by default it is 0.05.}
+\item{mut_prob}{Mutation probability, by default it is 1/(F-1).}
 }
 \value{
 Generates Latin hypercube designs for a given number of factor-level combinations.
@@ -39,6 +39,8 @@ Generates Latin hypercube designs for a given number of factor-level combination
 Weighted Criteria-Based Latin Hypercube Designs (LHDs) for Prime Numbers
 }
 \examples{
+\dontrun{
 library(CompExpDes)
 wtLHDs_prime(9,3,1,0,0)
+}
 }
